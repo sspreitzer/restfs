@@ -1,8 +1,8 @@
-DIR?=$(shell pwd)
-APP?=$(shell basename $(DIR)):app
+DIR?=src
+APP?=wsgi:app
 
 run: env bower_components
-	. env/bin/activate; gunicorn -c gunicorn.conf --chdir src $(APP)
+	. env/bin/activate; gunicorn -c gunicorn.conf --chdir $(DIR) $(APP)
 
 debug: env bower_components
 	. env/bin/activate; cd src; python debug.py
