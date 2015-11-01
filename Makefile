@@ -1,0 +1,16 @@
+DIR?=$(shell pwd)
+APP?=$(shell basename $(DIR)):app
+
+run: env bower_components
+	. env/bin/activate; gunicorn -c gunicorn.conf --chdir src $(APP)
+
+env:
+	virtualenv env
+	. env/bin/activate; pip install --upgrade pip
+	. env/bin/activate; pip install -r requirements.txt
+
+bower_components:
+	bower install
+
+clean:
+	rm -rf env/ bower_components/
