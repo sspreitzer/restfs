@@ -1,4 +1,11 @@
-Maya
-----
+# Maya
 
-This is a little test application for handling some frameworks.
+Maya is an examplary flask based web application.
+Its purpose is to demonstrate how flask web applications can be deployed.
+
+## Deploy
+
+```bash
+$ make -j 9
+```
+
