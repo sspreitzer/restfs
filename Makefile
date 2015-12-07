@@ -1,10 +1,10 @@
 DIR?=src
 APP?=wsgi:app
 
-run: env bower_components
+run: env
 	. env/bin/activate; gunicorn -c gunicorn.conf --chdir $(DIR) $(APP)
 
-debug: env bower_components
+debug: env
 	. env/bin/activate; cd src; python debug.py
 
 env:
@@ -12,8 +12,5 @@ env:
 	. env/bin/activate; pip install --upgrade pip
 	. env/bin/activate; pip install -r requirements.txt
 
-bower_components:
-	bower install
-
 clean:
-	rm -rf env/ bower_components/
+	rm -rf env/
