@@ -1,7 +1,6 @@
-# Maya
+# restfs
 
-Maya is an examplary flask based web application.
-Its purpose is to demonstrate how flask web applications can be deployed.
+restfs is an examplary flask based web application.
 
 ## Deploy
 
